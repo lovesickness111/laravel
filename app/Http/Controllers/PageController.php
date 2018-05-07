@@ -123,7 +123,7 @@ class PageController extends Controller
             $bill_detail->save();
         }
         Session::forget('cart');
-        return redirect()->back()->with('thongbao','Đặt hàng thành công');
+        return redirect()->back()->with('thongbao','Đặt hàng thành công, quay lại trang chủ để đặt xem thêm các sản phẩm tuyệt vời của chúng tôi!');
 
     }
 
@@ -157,7 +157,7 @@ class PageController extends Controller
         $user->phone = $req->phone;
         $user->address = $req->address;
         $user->save();
-        return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
+        return redirect('dang-nhap')->with('thanhcong','Tạo tài khoản thành công');
     }
 
     public function postLogin(Request $req){
